@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Login from './login.js';
 import "./styles.scss";
 import BubblePage from './components/BubblePage.js';
+import PrivateRoute from './PrivateRoute.js';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           display BubblePage when you're authenticated 
         */}
         <Switch>
-          <Route exact path="/protected" component={BubblePage} />
+          <PrivateRoute exact path="/protected" component={BubblePage} />
           <Route path="/login" component={Login} />
           <Route component={Login} />
         </Switch>
